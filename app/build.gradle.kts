@@ -23,7 +23,7 @@ android {
 
     buildTypes {
         release {
-            buildConfigField("String", "BASE_URL", "\"https://pokeapi.co/api/v2/\"")
+            buildConfigField("String", "BASE_URL", "\"https://pokeapi.co/api/v2\"")
 
             isMinifyEnabled = false
             proguardFiles(
@@ -33,7 +33,7 @@ android {
         }
 
         debug {
-            buildConfigField("String", "BASE_URL", "\"https://pokeapi.co/api/v2/\"")
+            buildConfigField("String", "BASE_URL", "\"https://pokeapi.co/api/v2\"")
 
             isMinifyEnabled = false
             isDebuggable = true
