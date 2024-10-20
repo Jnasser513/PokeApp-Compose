@@ -1,7 +1,7 @@
 package com.jnasser.pokeapp.features.home.data.models
 
-import com.jnasser.pokeapp.core.domain.models.Pokemon
-import com.jnasser.pokeapp.core.domain.models.PokemonListResult
+import com.jnasser.pokeapp.core.domain.models.pokemon_list.Pokemon
+import com.jnasser.pokeapp.core.domain.models.pokemon_list.PokemonListResult
 
 fun PokemonDto.toPokemon() = Pokemon(
     name = name,

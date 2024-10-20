@@ -2,7 +2,7 @@ package com.jnasser.pokeapp.features.home.data
 
 import com.jnasser.pokeapp.core.data.network.ApiConstants
 import com.jnasser.pokeapp.core.data.network.get
-import com.jnasser.pokeapp.core.domain.models.PokemonListResult
+import com.jnasser.pokeapp.core.domain.models.pokemon_list.PokemonListResult
 import com.jnasser.pokeapp.core.domain.util.DataError
 import com.jnasser.pokeapp.core.domain.util.map
 import com.jnasser.pokeapp.features.home.data.models.PokemonListResultDto
