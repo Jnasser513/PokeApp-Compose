@@ -24,6 +24,7 @@ android {
     buildTypes {
         release {
             buildConfigField("String", "BASE_URL", "\"https://pokeapi.co/api/v2\"")
+            buildConfigField("String", "IMAGE_BASE_URL", "\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\"")
 
             isMinifyEnabled = false
             proguardFiles(
@@ -34,6 +35,7 @@ android {
 
         debug {
             buildConfigField("String", "BASE_URL", "\"https://pokeapi.co/api/v2\"")
+            buildConfigField("String", "IMAGE_BASE_URL", "\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\"")
 
             isMinifyEnabled = false
             isDebuggable = true
@@ -45,8 +47,8 @@ android {
     }
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
