@@ -6,4 +6,6 @@
     <string name="error_server_error">Error de servidor</string>
     <string name="error_error_serialization">Error al convertir los datos</string>
     <string name="error_unknown">Ocurrio un problema.</string>
+    <string name="error_couldnt_load_image">No se pudo cargar la imagen</string>
+    <string name="pokemon_number">#%d</string>
 </resources>

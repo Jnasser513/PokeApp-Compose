@@ -1,6 +1,7 @@
 package com.jnasser.pokeapp.core.presentation.designsystem
 
 import androidx.compose.material3.Typography
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -43,8 +44,9 @@ val Typography = Typography(
     bodyMedium = TextStyle(
         fontFamily = Poppins,
         fontWeight = FontWeight.Normal,
-        fontSize = 14.sp,
-        lineHeight = 22.sp
+        fontSize = 16.sp,
+        lineHeight = 22.sp,
+        color = Color.Black
     ),
     bodyLarge = TextStyle(
         fontFamily = Poppins,
