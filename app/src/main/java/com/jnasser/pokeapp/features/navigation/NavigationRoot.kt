@@ -35,7 +35,6 @@ private fun NavGraphBuilder.homeGraph(
                 onPokemonClick = {
                     navController.navigate(NavigationRoutes.POKEMON_DETAIL_ROUTE) {
                         popUpTo(NavigationRoutes.POKEMON_LIST_ROUTE) {
-                            inclusive = true
                             saveState = true
                         }
                     }
