@@ -1,7 +1,7 @@
 package com.jnasser.pokeapp.core.data.network
 
 import com.jnasser.pokeapp.BuildConfig
-import com.jnasser.pokeapp.core.domain.util.DataError
+import com.jnasser.pokeapp.core.domain.util.error_handler.DataError
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.statement.HttpResponse
@@ -11,7 +11,7 @@ import io.ktor.client.request.parameter
 import io.ktor.client.request.url
 import io.ktor.util.network.UnresolvedAddressException
 import kotlinx.coroutines.CancellationException
-import com.jnasser.pokeapp.core.domain.util.Result
+import com.jnasser.pokeapp.core.domain.util.error_handler.Result
 
 suspend inline fun <reified Response: Any> HttpClient.get(
     route: String,

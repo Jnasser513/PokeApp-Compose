@@ -1,7 +1,7 @@
 package com.jnasser.pokeapp.core.presentation.ui
 
 import com.jnasser.pokeapp.R
-import com.jnasser.pokeapp.core.domain.util.DataError
+import com.jnasser.pokeapp.core.domain.util.error_handler.DataError
 
 fun DataError.asUiText(): UiText {
     return when(this) {

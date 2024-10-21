@@ -1,4 +1,4 @@
-package com.jnasser.pokeapp.core.domain.util
+package com.jnasser.pokeapp.core.domain.util.error_handler
 
 sealed interface DataError: Error {
 

@@ -1,4 +1,4 @@
-package com.jnasser.pokeapp.core.domain.util
+package com.jnasser.pokeapp.core.domain.util.error_handler
 
 /*
     Manejo de resultados por error o success
@@ -7,7 +7,7 @@ package com.jnasser.pokeapp.core.domain.util
  */
 sealed interface Result<out D, out E: Error> {
     data class Success<out D>(val data: D): Result<D, Nothing>
-    data class Error<out E: com.jnasser.pokeapp.core.domain.util.Error>(val error: E):
+    data class Error<out E: com.jnasser.pokeapp.core.domain.util.error_handler.Error>(val error: E):
         Result<Nothing, E>
 }
 

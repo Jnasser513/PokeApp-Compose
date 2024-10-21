@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.compose.SubcomposeAsyncImage
@@ -22,7 +23,8 @@ import com.jnasser.pokeapp.R
 @Composable
 fun Image(
     imageUrl: String?,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    progressColor: Color = MaterialTheme.colorScheme.onSurface
 ) {
     SubcomposeAsyncImage(
         model = imageUrl,
@@ -40,7 +42,7 @@ fun Image(
                 CircularProgressIndicator(
                     modifier = Modifier.size(20.dp),
                     strokeWidth = 2.dp,
-                    color = MaterialTheme.colorScheme.onSurface
+                    color = progressColor
                 )
             }
         },

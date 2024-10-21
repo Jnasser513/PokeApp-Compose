@@ -21,9 +21,8 @@ import androidx.compose.ui.unit.dp
 import com.jnasser.pokeapp.BuildConfig
 import com.jnasser.pokeapp.R
 import com.jnasser.pokeapp.core.presentation.designsystem.components.Image
-import com.jnasser.pokeapp.core.domain.models.Pokemon
+import com.jnasser.pokeapp.core.domain.models.pokemon_list.Pokemon
 import com.jnasser.pokeapp.core.presentation.designsystem.PokeAppTheme
-import com.jnasser.pokeapp.core.presentation.designsystem.White
 
 @Composable
 fun PokemonItem(
