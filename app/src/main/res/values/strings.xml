@@ -8,4 +8,14 @@
     <string name="error_unknown">Ocurrio un problema.</string>
     <string name="error_couldnt_load_image">No se pudo cargar la imagen</string>
     <string name="pokemon_number">#%d</string>
+    <string name="height">Altura: %d</string>
+    <string name="base_experience">Experiencia base: %d</string>
+    <string name="id">ID número: %d</string>
+    <string name="name">Nombre: %s</string>
+    <string name="stats">Estadisticas: %s</string>
+    <string name="weight">Weight: %d</string>
+    <string name="abilities">Habilidades</string>
+    <string name="movements">Movimientos</string>
+    <string name="held_items">Articulos cargados</string>
+    <string name="return_string">Regresar</string>
 </resources>

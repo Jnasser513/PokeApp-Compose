@@ -3,6 +3,7 @@ package com.jnasser.pokeapp
 import android.app.Application
 import com.jnasser.pokeapp.core.di.coreModule
 import com.jnasser.pokeapp.di.appModule
+import com.jnasser.pokeapp.features.detail.di.pokemonDetailModule
 import com.jnasser.pokeapp.features.home.di.pokemonListModule
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
@@ -27,7 +28,8 @@ class PokemonApp: Application() {
             modules(
                 appModule,
                 pokemonListModule,
-                coreModule
+                coreModule,
+                pokemonDetailModule
             )
         }
     }

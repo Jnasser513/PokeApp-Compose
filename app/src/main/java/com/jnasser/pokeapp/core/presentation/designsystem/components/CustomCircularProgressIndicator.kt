@@ -10,9 +10,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun CustomCircularProgressIndicator(color: Color = MaterialTheme.colorScheme.onSurface) {
+fun CustomCircularProgressIndicator(modifier: Modifier = Modifier, color: Color = MaterialTheme.colorScheme.onSurface) {
     CircularProgressIndicator(
-        modifier = Modifier
+        modifier = modifier
             .size(50.dp),
         strokeWidth = 2.dp,
         color = color

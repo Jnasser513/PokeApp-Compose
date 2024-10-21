@@ -38,7 +38,7 @@ import org.koin.androidx.compose.koinViewModel
 @Composable
 fun PokemonListScreenRoot(
     viewModel: PokemonListViewModel = koinViewModel(),
-    onPokemonClick: (String) -> Unit
+    onPokemonClick: () -> Unit
 ) {
     val context = LocalContext.current
 
@@ -53,7 +53,7 @@ fun PokemonListScreenRoot(
     PokemonListScreen(state = viewModel.state, onAction = { action ->
         when (action) {
             is PokemonListAction.OnPokemonClick -> {
-                onPokemonClick(action.pokemonName)
+                onPokemonClick()
             }
         }
         viewModel.onAction(action)
@@ -81,7 +81,7 @@ fun Loading() {
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background),
         ) {
-        CustomCircularProgressIndicator()
+        CustomCircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
     }
 }
 
@@ -101,7 +101,8 @@ fun CharacterList(
             modifier = modifier
                 .fillMaxSize()
                 .nestedScroll(rememberNestedScrollInteropConnection())
-                .padding(horizontal = 40.dp),
+                .padding(horizontal = 40.dp)
+                .padding(top = 80.dp),
             verticalArrangement = Arrangement.spacedBy(35.dp),
             horizontalArrangement = Arrangement.spacedBy(25.dp),
         ) {

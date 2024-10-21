@@ -32,9 +32,12 @@ private fun NavGraphBuilder.homeGraph(
     ) {
         composable(route = NavigationRoutes.POKEMON_LIST_ROUTE) {
             PokemonListScreenRoot(
-                onPokemonClick = { pokemonName ->
+                onPokemonClick = {
                     navController.navigate(NavigationRoutes.POKEMON_DETAIL_ROUTE) {
-                        restoreState = true
+                        popUpTo(NavigationRoutes.POKEMON_LIST_ROUTE) {
+                            inclusive = true
+                            saveState = true
+                        }
                     }
                 }
             )
@@ -43,7 +46,11 @@ private fun NavGraphBuilder.homeGraph(
             PokemonDetailScreenRoot(
                 onReturn = {
                     navController.navigate(NavigationRoutes.POKEMON_LIST_ROUTE) {
-                        navController.navigateUp()
+                        popUpTo(NavigationRoutes.POKEMON_DETAIL_ROUTE) {
+                            inclusive = true
+                            saveState = true
+                        }
+                        restoreState = true
                     }
                 }
             )
