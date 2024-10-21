@@ -1,4 +1,4 @@
-@file:OptIn(ExperimentalFoundationApi::class, ExperimentalFoundationApi::class)
+@file:OptIn(ExperimentalFoundationApi::class)
 
 package com.jnasser.pokeapp.features.home.presentation.composables
 
@@ -25,7 +25,9 @@ import androidx.compose.ui.platform.rememberNestedScrollInteropConnection
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.jnasser.pokeapp.core.domain.models.pokemon_list.Pokemon
 import com.jnasser.pokeapp.core.presentation.designsystem.PokeAppTheme
+import com.jnasser.pokeapp.core.presentation.designsystem.components.CustomCircularProgressIndicator
 import com.jnasser.pokeapp.core.presentation.ui.ObserveAsEvents
 import com.jnasser.pokeapp.features.home.presentation.PokemonListAction
 import com.jnasser.pokeapp.features.home.presentation.PokemonListEvent
@@ -35,7 +37,8 @@ import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun PokemonListScreenRoot(
-    viewModel: PokemonListViewModel = koinViewModel(), onPokemonClick: (String) -> Unit
+    viewModel: PokemonListViewModel = koinViewModel(),
+    onPokemonClick: (String) -> Unit
 ) {
     val context = LocalContext.current
 
@@ -53,6 +56,7 @@ fun PokemonListScreenRoot(
                 onPokemonClick(action.pokemonName)
             }
         }
+        viewModel.onAction(action)
     })
 }
 
@@ -77,13 +81,7 @@ fun Loading() {
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background),
         ) {
-        CircularProgressIndicator(
-            modifier = Modifier
-                .size(50.dp)
-                .align(Alignment.Center),
-            strokeWidth = 2.dp,
-            color = MaterialTheme.colorScheme.onSurface
-        )
+        CustomCircularProgressIndicator()
     }
 }
 
@@ -110,7 +108,9 @@ fun CharacterList(
             items(state.pokemonList.size) { index ->
                 PokemonItem(
                     pokemon = state.pokemonList[index],
-                    onClick = { onAction(PokemonListAction.OnPokemonClick(state.pokemonList[index].name)) },
+                    onClick = {
+                        onAction(PokemonListAction.OnPokemonClick(state.pokemonList[index].name))
+                        },
                     modifier = Modifier.animateItemPlacement()
                 )
             }
@@ -123,7 +123,9 @@ class PokemonListScreenPreviews {
     @Composable
     private fun PokemonListScreenPreview() {
         PokeAppTheme {
-            PokemonListScreen(state = (PokemonListViewState(isLoading = false)), onAction = {})
+            PokemonListScreen(state = (PokemonListViewState(isLoading = false, pokemonList = listOf(
+                Pokemon("Pikachu", "")
+            ))), onAction = {})
         }
     }
 

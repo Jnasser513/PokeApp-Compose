@@ -1,4 +1,4 @@
-package com.jnasser.pokeapp.features.detail.presentation.composables
+package com.jnasser.pokeapp.features.detail.presentation
 
 import com.jnasser.pokeapp.core.presentation.ui.UiText
 
